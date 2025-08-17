@@ -1,1 +1,1 @@
-Neovim distro for vimmaxxers
+Neovim 
