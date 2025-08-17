@@ -1,36 +1,45 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash
-hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
-  actions:
-    - text: Example Guide
-      link: /guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+title: "MaxxVim"
+description: "Neovim distribution for VimMaxxers."
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+# Getting Started with MaxxVim
 
-## Next steps
+Welcome to **MaxxVim**! This guide will help you get up and running MaxxVim, the ultimate Neovim distro for the VimMaxxers.
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+## What is MaxxVim?
+~~MaxxVim is a modern, modular, and highly customizable Neovim configuration designed to boost your productivity and make your editing experience delightful.~~
+MaxxVim is the Neovim distro for VimMaxxers who care about the best VimMaxxing experience.
+
+## Prerequisites
+- [Neovim](https://neovim.io/) (latest version is recommended)
+- [Git](https://git-scm.com/)
+
+## Installation
+1. **Backup your current Neovim config (optional):**
+   ```sh
+		mv ~/.config/nvim ~/.config/nvim.back
+   ```
+2. **Clone MaxxVim:**
+   ```sh
+   ~~git clone https://github.com/shubhisroking/maxxvim.git ~/.config/nvim~~
+   I GOTTA FIX THIS
+   ```
+3. **Start Neovim:**
+   ```sh
+   nvim
+   ```
+   Plugins will be auto-installed upon launch with lazy.
+
+## Usage
+- Explore the pre-configured keybindings and plugins.
+- Customize your setup by editing the configuration files in the `lua/config` and `lua/plugins` directories.
+
+## Troubleshooting
+- If you encounter issues, try running `:Lazy sync` inside Neovim to update plugins.
+- Check the [README](https://github.com/shubhisroking/maxxvim) for more details.
+
+## Contributing
+Contributions are welcome! Please open issues or pull requests on the [GitHub repository](https://github.com/shubhisroking/maxxvim).
+
+---
