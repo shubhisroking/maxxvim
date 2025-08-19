@@ -1,44 +1,119 @@
 ---
 title: "MaxxVim"
-description: "Neovim distribution for VimMaxxers."
+description: "Neovim distro for VimMaxxers."
 ---
 
-# Getting Started with MaxxVim
+# MaxxVim
 
-Welcome to **MaxxVim**! This guide will help you get up and running MaxxVim, the ultimate Neovim distro for the VimMaxxers.
+**MaxxVim** is a modern, kinda feature rich (not enough to make your thinkpad explode unfortunately), Neovim distribution designed for VimMaxxers.
 
-## What is MaxxVim?
-~~MaxxVim is a modern, modular, and highly customizable Neovim configuration designed to boost your productivity and make your editing experience delightful.~~
-MaxxVim is the Neovim distro for VimMaxxers who care about the best VimMaxxing experience.
+## How maxxvim is better than your current hacky old unc setup?
 
-## Prerequisites
-- [Neovim](https://neovim.io/) (latest version is recommended)
+{/* MaxxVim transforms Neovim into a powerful IDE-like experience with: */}
+
+- **Fast, ~~faster than your grandma car thats for sure~~**: Startup time is just 80-100ms if you are not using a literal potato.
+- **Pretty good ui**: Not gonna win any design awards but better than most uglo neovim configs you see floating around the internet.
+- **LSP Support**: You dont like going through 15 different repos with most insane name and reading thier insane docs dont ya right? Atleast you wont have to do it here.
+- **Smart Features**: Fuzzy finder, git integration, terminal management it got all of that.
+- **Zero Config**: You ever tried using some other distros and realized ah hell nah ts is bad without my own modifaction keybindings 
+are insane and I dont like how ts works and spent like 10 hours fixing that mess? You wont have to do that shit here atleast because 
+I gothchu bro I am not using some insane keybindings which nobody on this earth uses for this distro.
+- **Extensible**: Adding new plugins is insanely easy (I will explain how to add it later the guide.)
+
+## Some tools you should know maxxvim.
+
+### Core Tools
+- **Mason.nvim** - Download manager for your LSP servers, formatters, linters you ask and it and this bad boy got this.
+- **Telescope** - Fuzzy finder, I also have fzf-native enabled so it doesnt work like snail (its horrible without it tbh).
+- **Treesitter** - Awesome syntax highlighting.
+- **nvim-cmp** - autocompletion with multiple sources like buffer words, LSP, path and much more.
+- **Conform and nvim-lint** - Code formatting and linting
+
+### Language Support Which MaxxVim comes with by default
+Also dont worry if this language is not in this list adding new language servers is really easy and I will add it in the guide soon.
+ {/* TODO add how to add language server guide. */}
+- **Web**: JavaScript, TypeScript, HTML, CSS, React, Vue, Svelte
+- **Systems**: Rust, Go, C/C++, Python
+- **Config**: JSON, YAML, TOML, Lua
+- **Docs**: Markdown
+
+### UI/UX (cause who dont like a good ui.)
+- **Dashboard** - Cool startup screen with recent files and MaxxVim ASCII art so that you can flex on your friends.
+- **Lualine** - Cool status bar with information right in your statusline so you dont have to spam git status like every 2 seconds (please get some help if you do this).
+- **Bufferline** - Tab-like buffer management
+- **NvimTree** - File explorer with icons and git integration
+- **Tokyo Night & Catppuccin** - Really good looking color schemes.
+
+## Quick Installation
+
+### Prerequisites
+- [Neovim](https://neovim.io/) v0.9+ 
 - [Git](https://git-scm.com/)
+- A [Nerd Font](https://www.nerdfonts.com/) (for icons)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (for telescope search)
 
-## Installation
-1. **Backup your current Neovim config (optional):**
-   ```sh
-		mv ~/.config/nvim ~/.config/nvim.back
+### Install MaxxVim
+1. **Backup your current config:**
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.backup
    ```
+
 2. **Clone MaxxVim:**
-   ```sh
+   ```bash
    git clone https://github.com/shubhisroking/maxxvim.git ~/.config/nvim
    ```
-3. **Start Neovim:**
-   ```sh
+
+3. **Launch Neovim:**
+   ```bash
    nvim
    ```
-   Plugins will be auto-installed upon launch with lazy.
+   All plugins and LSP servers will auto-install on first startup
 
-## Usage
-- Explore the pre-configured keybindings and plugins.
-- Customize your setup by editing the configuration files in the `lua/config` and `lua/plugins` directories.
+## Some keybindings you should know.
 
-## Troubleshooting
-- If you encounter issues, try running `:Lazy sync` inside Neovim to update plugins.
-- Check the [README](https://github.com/shubhisroking/maxxvim) for more details.
+### File Operations
+- `<leader>ff` - Find files (Telescope)
+- `<leader>fr` - Recent files
+- `<leader>fs` - Find text in project
+- `<leader>ee` - Toggle file explorer
 
-## Contributing
-Contributions are welcome! Please open issues or pull requests on the [GitHub repository](https://github.com/shubhisroking/maxxvim).
+### LSP & Code
+- `gd` - Go to definition
+- `gr` - Show references  
+- `K` - Hover documentation
+- `<leader>ca` - Code actions
+- `<leader>rn` - Rename symbol
+
+### Git Integration
+- `<leader>gs` - Git status
+- `<leader>gb` - Git blame
+- `<leader>gc` - Git commits
+
+### Terminal & Diagnostics
+- `<C-\>` - Toggle floating terminal
+- `<leader>xx` - Toggle diagnostics (Trouble)
+
+*Leader key is `<Space>`*
+
+## Customization
+
+MaxxVim is built to be easily customizable like you can remove anything you dont like and add anything you do like:
+
+- **Core settings**: `lua/config/vim-options.lua`
+- **Keymaps**: `lua/config/keymaps.lua` 
+- **Plugin config**: `lua/plugins/` directory
+- **LSP settings**: `lua/plugins/essentials/lsp.lua`
+
+## Performance
+
+- **Startup time**: ~50-100ms until unless you are using some crappy 2010 thinkpad.
+- **Memory efficient**: Thanks to LazyVim plugins are loaded in a lazy way.
+
+## Get Help
+
+- **Troubleshooting**: Run `:Lazy sync` to update plugins
+- **Documentation**: Check our [GitHub repository](https://github.com/shubhisroking/maxxvim)
+- **Issues**: Report bugs or request features on GitHub
 
 ---
+

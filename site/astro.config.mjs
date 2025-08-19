@@ -8,19 +8,30 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'MaxxVim',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/shubhisroking/maxxvim' }],
+			description: 'A neovim distro for vimmaxxers',
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/shubhisroking/maxxvim' }
+			],
 			sidebar: [
+				{
+					label: 'Getting Started',
+					items: [
+						{ label: 'Overview', slug: '' },
+					],
+				},
 				{
 					label: 'Guides',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Quick Setup Guide', slug: 'guides/quicksetup' },
 					],
 				},
 				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
+			],
+			customCss: [
+				// Optional: Add custom styling
 			],
 		}),
 		image(),
